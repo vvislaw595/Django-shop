@@ -1,0 +1,6 @@
+django>=5.0
+djangorestframework
+pyjwt
+django-cors-headers
+mysqlclient
+python-alipay-sdk

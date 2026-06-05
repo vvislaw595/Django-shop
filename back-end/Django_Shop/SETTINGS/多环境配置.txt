@@ -1,0 +1,6 @@
+配置文件划分
+
+        settings.py         主配置文件，写通用配置
+        settings_dev.py     开发环境配置
+        settings_test.py     测试
+        settings_prod.py     生产
