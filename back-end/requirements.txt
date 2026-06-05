@@ -4,3 +4,4 @@ pyjwt
 django-cors-headers
 mysqlclient
 python-alipay-sdk
+gunicorn

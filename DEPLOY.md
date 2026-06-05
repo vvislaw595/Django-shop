@@ -102,10 +102,18 @@ mysql -h 你的Host -u root -p --port 你的端口 --protocol=TCP railway < shop
 5. 填写以下启动命令：
 
 ```bash
-cd back-end && python manage.py migrate && python manage.py runserver 0.0.0.0:$PORT
+python manage.py migrate && python manage.py collectstatic --noinput && gunicorn Django_Shop.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120
 ```
 
-6. Railway 会自动识别 `requirements.txt` 安装依赖
+> **命令说明：**
+> - `python manage.py migrate` — 执行数据库迁移
+> - `python manage.py collectstatic --noinput` — 收集静态文件
+> - `gunicorn Django_Shop.wsgi:application` — 用 gunicorn 启动（生产级服务器，比 runserver 稳定）
+> - `--bind 0.0.0.0:$PORT` — Railway 通过 `$PORT` 环境变量分配端口
+> - `--workers 2` — 2 个工作进程（免费额度 1GB 内存足够）
+> - `--timeout 120` — 超时 120 秒（图片上传等耗时操作）
+
+6. Railway 会自动识别 `requirements.txt` 安装依赖（已包含 `gunicorn`）
 
 ---
 
