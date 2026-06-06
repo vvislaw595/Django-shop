@@ -74,7 +74,7 @@ pip install django djangorestframework pyjwt django-cors-headers mysqlclient pyt
 
 # 导入数据库
 # 先在MySQL创建数据库 `shop`
-mysql -u root -p shop < ../../shop-2026-06-03.sql
+mysql -u root -p shop < ../../shop_fixed.sql
 
 # 解压商品图片
 # back-end/static/product_images/product_images.zip 解压到当前目录
