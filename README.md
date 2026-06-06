@@ -2,6 +2,8 @@
 
 基于 Django + Vue 3 的前后端分离电商商城项目。
 
+![首页示例](首页示例.png)
+
 ## 项目简介
 
 - **后端**: Django 5.2 + Django REST Framework + MySQL
